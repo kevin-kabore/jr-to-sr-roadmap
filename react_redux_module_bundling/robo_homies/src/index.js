@@ -7,5 +7,5 @@ import registerServiceWorker from './registerServiceWorker';
 import 'tachyons';
 
 
-ReactDOM.render(<Hello />, document.getElementById('root'));
+ReactDOM.render(<Hello greeting={`Hello React Ninja`} />, document.getElementById('root'));
 registerServiceWorker();
