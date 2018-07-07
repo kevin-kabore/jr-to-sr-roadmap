@@ -15,12 +15,8 @@ class App extends Component {
   }
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
-      .then(res => {
-        return res.json();
-      })
-      .then(users => {
-        this.setState({ robots: users });
-      });
+      .then(res => res.json())
+      .then(users => this.setState({ robots: users }));
 
     console.log('componentDidMount');
   }
@@ -34,15 +30,19 @@ class App extends Component {
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
+    if (this.state.robots.length === 0) {
+      return <h1>Loading...</h1>;
+    } else {
+      return (
+        <div className="tc">
+          <h1 className="f1">Robo Homies </h1>
+          <SearchBox searchChange={this.onSearchChange} />
+          <CardList robots={filteredRobots} />
+        </div>
+      );
+    }
     console.log(`Search Results: `, filteredRobots);
     console.log('render');
-    return (
-      <div className="tc">
-        <h1 className="f1">Robo Homies </h1>
-        <SearchBox searchChange={this.onSearchChange} />
-        <CardList robots={filteredRobots} />
-      </div>
-    );
   }
 }
 
