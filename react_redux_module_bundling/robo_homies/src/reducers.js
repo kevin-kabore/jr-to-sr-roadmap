@@ -26,6 +26,7 @@ const initialStateUsers = {
 	users: [],
 	error: ''
 }
+
 export  const requestUsers = (state=initialStateUsers, action={}) => {
 	switch (action.type) {
 		case REQUEST_USERS_PENDING:
