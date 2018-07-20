@@ -11,23 +11,29 @@ import { setSearchField } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
-    searchField: state.searchField
+    searchField: state.searchRobots.searchField,
+    robots: state.requestUsers.users,
+    isPendning: state.requestUsers.isPendning,
+    error: state.requestUsers.error
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    onRequestRobots: (requestUsers) => dispatch(requestUsers)
   }
 }
 
 class App extends Component {
+  
   constructor() {
     super();
     this.state = {
       robots: []
     };
   }
+
   componentDidMount() {
     console.log(this.props.store)
     fetch('https://jsonplaceholder.typicode.com/users')
