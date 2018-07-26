@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setSearchField, requestUsers } from '../actions';
+
 import CardList from '../components/CardList';
+import Header from '../components/Header';
 import ErrorBoundry from '../components/ErrorBoundry';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
-import './App.css';
-// import { robots } from './robots';
 
-import { setSearchField, requestUsers } from '../actions';
+import './App.css';
+
+
 
 const mapStateToProps = (state) => {
   return {
@@ -41,7 +44,7 @@ class App extends Component {
       <h1>Loading...</h1> : 
       (
         <div className="tc">
-          <h1 className="f1">Robo Homies</h1>
+          <Header />
           <SearchBox searchChange={onSearchChange} />
           <Scroll>
             <ErrorBoundry>
