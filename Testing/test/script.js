@@ -10,12 +10,14 @@ const googleDatabase = [
   'catloversinc.com'
 ];
 
-const googleSearch = searchInput => {
-  const matches = googleDatabase.filter(site => {
+const googleSearch = (searchInput, db) => {
+  const matches = db.filter(site => {
     return site.includes(searchInput);
   });
   // console.log('running');
   return matches.length > 3 ? matches.slice(0, 3) : matches;
 };
 
-console.log(googleSearch('cats'));
+module.exports = googleSearch;
+
+console.log(googleSearch('cats', googleDatabase));
