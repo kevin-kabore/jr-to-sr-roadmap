@@ -1,29 +1,53 @@
 const fetch = require('node-fetch');
 
-const getPeoplePromise = fetch => {
-  return fetch('https://swapi.co/api/people')
+// const getPeoplePromise = fetch => {
+//   return fetch('https://swapi.co/api/people')
+//     .then(response => response.json())
+//     .then(data => {
+//       console.log(data);
+//       return {
+//         count: data.count,
+//         results: data.results
+//       };
+//     });
+// };
+
+// const getPeopleAsync = async fetch => {
+//   const getRequest = await fetch('https://swapi.co/api/people');
+//   const data = await getRequest.json();
+//   console.log(data);
+//   return {
+//     count: data.count,
+//     results: data.results
+//   };
+// };
+
+
+
+const getPeoplePromise = (fetch) => {
+  return fetch('https://swapi.co/api/people/')
     .then(response => response.json())
-    .then(data => {
-      console.log(data);
+    .then(data => {  
       return {
-        count: data.count,
+        count: data.count, 
         results: data.results
-      };
-    });
-};
+      }
+    })
+}
 
 const getPeopleAsync = async fetch => {
-  const getRequest = await fetch('https://swapi.co/api/people');
-  const data = await getRequest.json();
-  console.log(data);
+  const getRequest = await fetch('https://swapi.co/api/people/')
+  const data = await getRequest.json()
   return {
     count: data.count,
     results: data.results
-  };
-};
+  }
+
+}
+
 
 // getPeopleAsync(fetch);
 module.exports = {
-  getPeople,
+  getPeopleAsync,
   getPeoplePromise
 };
