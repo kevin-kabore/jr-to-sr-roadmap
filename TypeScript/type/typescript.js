@@ -54,7 +54,31 @@ let error = () => {
 let fightRobotArmy = (robots) => {
     console.log('FIGHT!');
 };
+fightRobotArmy({ count: 2, type: 'Droid' }); // magic is optional;
 // Same as the below
 let fightRobotArmy1 = (robots) => {
     console.log('FIGHT!');
 };
+let dog = {};
+dog.count;
+// Function
+let fightRobotArmy2 = (robots) => {
+    console.log('FIGHT!');
+};
+let fightRobotArmy3 = (robots) => {
+    console.log('FIGHT!');
+    return 10;
+};
+// Class
+class Animal {
+    constructor(sound) {
+        this.sing = 'rippit';
+        this.sing = sound;
+    }
+    greet() {
+        return `Hello ${this.sing}`;
+    }
+}
+let lion = new Animal('RAAAWWWRRR');
+// console.log(lion.sing); // unable to access 
+console.log(lion.greet());

@@ -64,14 +64,53 @@ let error = () => {
 interface RobotArmy {
 	count: number,
 	type: string,
-	magic: string
+	magic?: string
 }
 // Ensures that all args have count, type, and magic 
 // as matching types
 let fightRobotArmy = (robots: RobotArmy) => {
 	console.log('FIGHT!');
 }
+fightRobotArmy({count: 2, type: 'Droid'}) // magic is optional;
+
 // Same as the below
 let fightRobotArmy1 = (robots: {count: number, type: string, magic: string}) => {
-	console.log('FIGHT!');
+	console.log('FIGHT!')
 }
+
+
+// Type Assertion
+interface CatArmy {
+	count: number,
+	type: string,
+	magic?: string // optional
+}
+
+let dog = {} as CatArmy;
+dog.count
+
+
+// Function
+let fightRobotArmy2 = (robots: RobotArmy): void => {
+	console.log('FIGHT!')
+}
+
+let fightRobotArmy3 = (robots: {count: number, type: string, magic: string}): number => {
+	console.log('FIGHT!')
+	return 10
+}
+
+// Class
+class Animal {
+	private sing: string = 'rippit'
+	constructor(sound: string) {
+		this.sing = sound;
+	}
+
+	greet(): string {
+		return `Hello ${this.sing}`
+	}
+}
+let lion = new Animal('RAAAWWWRRR');
+// console.log(lion.sing); // unable to access 
+console.log(lion.greet())
