@@ -49,5 +49,12 @@ let sing = () => {
 let error = () => {
     throw Error('oops');
 };
-// Interface
-// Used well with objects
+// Ensures that all args have count, type, and magic 
+// as matching types
+let fightRobotArmy = (robots) => {
+    console.log('FIGHT!');
+};
+// Same as the below
+let fightRobotArmy1 = (robots) => {
+    console.log('FIGHT!');
+};

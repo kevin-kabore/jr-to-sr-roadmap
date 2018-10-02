@@ -60,3 +60,18 @@ let error = () => {
 
 // Interface
 // Used well with objects
+// Basically making a new type
+interface RobotArmy {
+	count: number,
+	type: string,
+	magic: string
+}
+// Ensures that all args have count, type, and magic 
+// as matching types
+let fightRobotArmy = (robots: RobotArmy) => {
+	console.log('FIGHT!');
+}
+// Same as the below
+let fightRobotArmy1 = (robots: {count: number, type: string, magic: string}) => {
+	console.log('FIGHT!');
+}
