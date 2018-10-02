@@ -114,3 +114,9 @@ class Animal {
 let lion = new Animal('RAAAWWWRRR');
 // console.log(lion.sing); // unable to access 
 console.log(lion.greet())
+
+
+// Union
+let confused: string | number = 'Twenty'
+// let veryConfused: string | number = true won't work
+let veryConfused: string | number | boolean = true
