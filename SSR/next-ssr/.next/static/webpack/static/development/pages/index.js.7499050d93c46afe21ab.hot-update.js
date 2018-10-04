@@ -43,7 +43,19 @@ var Index = function Index() {
       lineNumber: 7
     },
     __self: this
-  }, "About")));
+  }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
+    width: "800",
+    height: "480",
+    src: "https://my.matterport.com/show/?m=bw9SYXpBBJR",
+    frameborder: "0",
+    allowfullscreen: true,
+    allow: "vr",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
@@ -70,4 +82,4 @@ var Index = function Index() {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.545ea0ea71f447d63dee.hot-update.js.map
+//# sourceMappingURL=index.js.7499050d93c46afe21ab.hot-update.js.map
