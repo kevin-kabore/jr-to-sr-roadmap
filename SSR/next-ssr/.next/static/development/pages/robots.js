@@ -9944,7 +9944,20 @@ var Robots = function Robots(props) {
         lineNumber: 13
       },
       __self: this
-    }, robot.name);
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      href: "robots/".concat(robot.id),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, robot.name)));
   })));
 };
 
@@ -9968,11 +9981,13 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
 
         case 5:
           data = _context.sent;
+          // Will render on the server every time and client only on initial load
+          console.log(data);
           return _context.abrupt("return", {
             robots: data
           });
 
-        case 7:
+        case 8:
         case "end":
           return _context.stop();
       }
@@ -10002,7 +10017,7 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!*******************************!*\
   !*** multi ./pages/robots.js ***!
   \*******************************/
@@ -10027,5 +10042,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js"]]]));;
+},[[4,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=robots.js.map

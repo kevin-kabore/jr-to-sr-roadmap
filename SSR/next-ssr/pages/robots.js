@@ -11,11 +11,12 @@ const Robots = (props) => (
 			{
 				props.robots.map(robot => (
 					<li key={robot.id}>
-						{robot.name}
+						<Link href={`robots/${robot.id}`}>
+							<a>{robot.name}</a>
+						</Link>
 					</li>
 				))
 			}
-
 		</div>
 	</div>
 );
@@ -23,6 +24,9 @@ const Robots = (props) => (
 Robots.getInitialProps = async function() {
 	const res = await fetch('https://jsonplaceholder.typicode.com/users');
 	const data = await res.json();
+
+	// Will render on the server every time and client only on initial load
+	console.log(data);
 	
 	return {
 		robots: data
